@@ -1,7 +1,8 @@
 
-var async = require('async');
+let async = require('async');
+let _ = require('lodash');
 
-import { ConfigParams, FilterParams, PagingParams } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 import { Descriptor } from 'pip-services3-commons-node';
 import { References } from 'pip-services3-commons-node';
 
@@ -29,7 +30,7 @@ suite('BeaconsHttpClientV1_2', () => {
 
         client.setReferences(references);
         fixture = new BeaconsClientV1Fixture(client);
-        client.open(null, done);
+        client.open(null, null);
 
         var work = true;
 
@@ -37,28 +38,32 @@ suite('BeaconsHttpClientV1_2', () => {
             return work
         },
             (callback) => {
-                client.getBeacons('123', new FilterParams(), new PagingParams(), (error, page) => {
-                    if (page.data.length == 0) {
+                client.getBeacons('123', null, null, (error, page) => {
+                    if (_.isEmpty(page.data)) {
                         work = false;
                         callback();
+                        return;
                     }
 
                     var counter = 0
-
                     async.whilst(() => {
                         return counter != page.data.length
                     },
                         (cb) => {
+
                             client.deleteBeaconById('123', page.data[counter].id, (err, beacon) => {
                                 counter++;
                                 cb();
                             })
                         },
                         (err) => {
+
                             callback(err);
                         }
                     )
                 })
+            }, (err) => {
+                done();
             }
         )
 
