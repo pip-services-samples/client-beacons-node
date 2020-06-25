@@ -1,5 +1,5 @@
 {
-  "name": "beacons",
+  "name": "pip-data-microservice-node",
   "version": "1.0.0",
   "main": "./obj/src/index.js",
   "typings": "./obj/src/index.d.ts",
@@ -22,6 +22,7 @@
     "@types/node": "^10.3.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "pip-data-microservice-node": "git+https://github.com/pip-services-samples/pip-data-microservice-node.git"
   }
 }
