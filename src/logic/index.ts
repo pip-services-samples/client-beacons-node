@@ -1,1 +1,0 @@
-export { IBeaconsController } from './IBeaconsController';

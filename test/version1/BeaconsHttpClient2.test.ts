@@ -6,7 +6,7 @@ import { ConfigParams } from 'pip-services3-commons-node';
 import { Descriptor } from 'pip-services3-commons-node';
 import { References } from 'pip-services3-commons-node';
 
-import { BeaconsHttpClientV1 } from '../../../src/clients/version1/BeaconsHttpClientV1';
+import { BeaconsHttpClientV1 } from '../../src/version1/BeaconsHttpClientV1';
 import { BeaconsClientV1Fixture } from './BeaconsClientV1Fixture';
 
 suite('BeaconsHttpClientV1_2', () => {

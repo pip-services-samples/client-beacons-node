@@ -5,7 +5,7 @@ import { References } from 'pip-services3-commons-node';
 
 import { BeaconsMemoryPersistence } from 'pip-data-microservice-node';
 import { BeaconsController } from 'pip-data-microservice-node';
-import { BeaconsDirectClientV1 } from '../../../src/clients/version1/BeaconsDirectClientV1';
+import { BeaconsDirectClientV1 } from '../../src/version1/BeaconsDirectClientV1';
 import { BeaconsClientV1Fixture } from './BeaconsClientV1Fixture';
 
 suite('BeaconsDirectClientV1', () => {

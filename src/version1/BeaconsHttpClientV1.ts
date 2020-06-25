@@ -3,7 +3,7 @@ import { PagingParams } from 'pip-services3-commons-node';
 import { DataPage } from 'pip-services3-commons-node';
 import { CommandableHttpClient } from 'pip-services3-rpc-node';
 
-import { BeaconV1 } from '../../../src/data/version1/BeaconV1';
+import { BeaconV1 } from './BeaconV1';
 import { IBeaconsClientV1 } from './IBeaconsClientV1';
 
 export class BeaconsHttpClientV1 extends CommandableHttpClient implements IBeaconsClientV1 {

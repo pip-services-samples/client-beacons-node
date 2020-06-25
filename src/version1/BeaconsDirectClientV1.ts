@@ -4,9 +4,9 @@ import { DataPage } from 'pip-services3-commons-node';
 import { DirectClient } from 'pip-services3-rpc-node';
 import { Descriptor } from 'pip-services3-commons-node';
 
-import { BeaconV1 } from '../../../src/data/version1/BeaconV1';
+import { BeaconV1 } from './BeaconV1';
 import { IBeaconsClientV1 } from './IBeaconsClientV1';
-import { IBeaconsController } from '../../../src/logic/IBeaconsController';
+import { IBeaconsController } from 'pip-data-microservice-node';
 
 export class BeaconsDirectClientV1 extends DirectClient<IBeaconsController> implements IBeaconsClientV1 {
     public constructor() {
